@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function TabsLayout() {
   return (
@@ -18,7 +19,15 @@ export default function TabsLayout() {
           },
         }}
       ></Tabs.Screen>
-      <Tabs.Screen name="Login" options={{ title: "Login" }}></Tabs.Screen>
+      <Tabs.Screen
+        name="Login"
+        options={{
+          title: "Login",
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="login" size={24} color={color} />
+          ),
+        }}
+      ></Tabs.Screen>
     </Tabs>
   );
 }
